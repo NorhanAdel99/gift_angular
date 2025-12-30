@@ -1,0 +1,40 @@
+<app-auth-container>
+    <div class="flex_center">
+        <img src="assets/images/logo.svg" class="login_logo mx-auto mb-4" alt="enter phone number" loading="lazy">
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="form-group mb-4"><label class="form-label"><span class="m-end-5">رقم الجوال </span></label><input
+                type="number" class="form-control" placeholder="ادخل رقم الجوال" formControlName="phone">
+            <div>
+                @if (loginForm.controls.phone.touched && loginForm.controls.phone.invalid) {
+                <small class="text-danger">
+                    رقم الجوال غير صحيح
+                </small>
+                }
+
+                @if (error()) {
+                <div class="alert alert-danger mt-2">
+                    {{ error() }}
+                </div>
+                }
+                <div class="input_icon end">
+                    <div class="d-flex align-items-center gap-1"><img src="assets/images/saudi.svg" alt="vector"
+                            loading="lazy" class="img_icon mb-1"><span>|</span><span class="text-light"> 966+ </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn main_btn w-100  mb-4" type="submit" [disabled]="loading()">
+            @if (loading()) {
+            <span class="spinner-border spinner-border-sm"></span>
+            جاري الإرسال...
+            } @else {
+            تسجيل الدخول
+            }
+        </button>
+        <div class="font-bold f-15 mb-4 text-center"><span class="gray">ليس لديك حساب ؟ </span>
+            <a routerLink="/auth/register" class="main_color">تسجيل جديد</a>
+        </div>
+        <a routerLink="/" class="main_color text-center d-block text_underline"> الدخول كزائر </a>
+    </form>
+</app-auth-container>

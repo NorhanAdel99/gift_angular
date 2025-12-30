@@ -1,0 +1,66 @@
+<!-- ===== Commercial Register Version ===== -->
+<div class="form-group" *ngIf="commercial_register_copy; else profileImage">
+  <label [for]="id" class="form-label">
+    <p><ng-content></ng-content></p>
+  </label>
+
+  <label
+    [for]="id"
+    class="form-control"
+    [ngClass]="{
+      'h_fitContent position-relative': previewImage || newImages,
+      'd-flex align-items-center': !previewImage && !newImages
+    }"
+  >
+    <img *ngIf="previewImage || newImages" [src]="previewImage!" class="preview_img" />
+
+    <span
+      *ngIf="previewImage || newImages"
+      class="remove-btn"
+      (click)="removeImage(); $event.stopPropagation()"
+    >
+      🗑
+    </span>
+
+    <div *ngIf="!previewImage && !newImages" class="flex_between grow-1">
+      <span class="select">اختر صورة</span>
+      <img src="assets/images/camera.png" class="img_icon" />
+    </div>
+
+    <input
+      type="file"
+      hidden
+      [id]="id"
+      [name]="name"
+      accept="image/*"
+      (change)="handleFileChange($event)"
+    />
+  </label>
+</div>
+
+<!-- ===== Profile Image Version ===== -->
+<ng-template #profileImage>
+  <div class="d-flex align-items-center justify-content-center gap-1">
+    <label [for]="id" class="base-image-input">
+      <img *ngIf="previewImage; else emptyImage" [src]="previewImage" />
+
+      <ng-template #emptyImage>
+        <span class="select">
+          <img src="assets/images/arrow.png" />
+        </span>
+        <div class="editIcon">
+          <img src="assets/images/Camera.svg" class="" />
+        </div>
+      </ng-template>
+
+      <input
+        type="file"
+        hidden
+        [id]="id"
+        [name]="name"
+        accept="image/*"
+        (change)="handleFileChange($event)"
+      />
+    </label>
+  </div>
+</ng-template>

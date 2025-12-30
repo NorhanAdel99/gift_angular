@@ -1,0 +1,98 @@
+<app-auth-container [auth]="true">
+
+  <div class="flex_center">
+    <img src="assets/images/logo.svg" class="login_logo mx-auto mb-4" alt="register" loading="lazy" />
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <app-image-upload [(modelValue)]="image" formControlName="image" [id]="'profile'" name="profile"
+      [commercial_register_copy]="false" (removeImageEvent)="onRemoveImage()">
+      صورة البروفايل
+    </app-image-upload>
+    <!-- @if (registerForm.controls.image.touched && registerForm.controls.image.errors?.['required']) {
+  <small class="text-danger">
+    صورة البروفايل مطلوبة
+  </small>
+} -->
+
+    <!-- Phone -->
+    <div class="form-group">
+      <label class="form-label">رقم الجوال</label>
+      <input type="number" class="form-control" placeholder="ادخل رقم الجوال" formControlName="Phone" />
+      @if (registerForm.controls.Phone.touched && registerForm.controls.Phone.errors?.['required'] ||
+      registerForm.controls.Phone.errors?.['pattern']) {
+      <small class="text-danger">
+        رقم الجوال مطلوب
+      </small>
+      }
+    </div>
+
+    <!-- Name -->
+    <div class="form-group">
+      <label class="form-label">الاسم</label>
+      <input type="text" class="form-control" placeholder="ادخل الاسم" formControlName="UserName" />
+      @if (registerForm.controls.UserName.touched && registerForm.controls.UserName.errors?.['required']) {
+      <small class="text-danger">
+        الاسم مطلوب
+      </small>
+      }
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label class="form-label">البريد الالكتروني</label>
+      <input type="email" class="form-control" placeholder="ادخل البريد" formControlName="Email" />
+      @if (registerForm.controls.Email.touched && registerForm.controls.Email.errors?.['required']) {
+      <small class="text-danger">
+        البريد الإلكتروني مطلوب
+      </small>
+      }
+
+      @if (registerForm.controls.Email.touched && registerForm.controls.Email.errors?.['email']) {
+      <small class="text-danger">
+        البريد الإلكتروني غير صحيح
+      </small>
+      }
+    </div>
+
+    <!-- City -->
+    <div class="form-group">
+      <label class="form-label">المدينة</label>
+      <select id="city" class="form-control" [formControl]="registerForm.controls['city']" [disabled]="citiesLoading">
+        <option value="" disabled selected>Select a city</option>
+        @for (c of cities; let i = $index; track c) {
+        <option [value]="c.id">{{ c.name }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- Terms -->
+    <div class="d-flex align-items-center gap-2 form-group">
+      <input type="checkbox" formControlName="terms" />
+      <a routerLink="/terms_and_conditions" class="accept_terms">
+        قرأت ووافقت على الشروط والأحكام
+      </a>
+    </div>
+    @if (registerForm.controls.terms.touched && registerForm.controls.terms.errors?.['required']) {
+    <small class="text-danger">
+      يجب الموافقة على الشروط والأحكام
+    </small>
+    }
+
+
+    <!-- Submit -->
+    <button class="btn main_btn w-100 mb-4" type="submit">
+      تسجيل
+    </button>
+
+    <!-- Login -->
+    <div class="text-center">
+      <span class="gray"> لديك حساب بالفعل ؟ </span>
+      <a routerLink="/auth/login" class="main_color">
+        تسجيل الدخول
+      </a>
+    </div>
+
+  </form>
+
+</app-auth-container>

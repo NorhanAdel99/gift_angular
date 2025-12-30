@@ -1,0 +1,19 @@
+<div class="gardient_card">
+  <div class="content">
+    <h5 class="title_n mb-3 font-bold">
+     {{ appLinks()?.title }}
+    </h5>
+    <p class="mb-3 text-light">
+      {{ appLinks()?.description }}
+    </p>
+    <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+      <a [routerLink]="appLinks()?.androidLink" target="_blank" class="d-block">
+        <img src="../../assets/images/google_play.svg" alt="google_plat" loading="lazy" class="install_app_img" />
+      </a>
+      <a [routerLink]="appLinks()?.iosLink" target="_blank" class="d-block">
+        <img src="../../assets/images/play_store.svg" alt="play_store" loading="lazy" class="install_app_img" />
+      </a>
+    </div>
+  </div>
+  <img src="../../assets/images/phone_app.png" alt="phone" loading="lazy" class="vert_move phone">
+</div>

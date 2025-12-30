@@ -1,0 +1,4 @@
+.contain_categories {
+  max-height: 150px;
+  overflow: auto;
+}

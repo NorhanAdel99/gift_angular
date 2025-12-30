@@ -1,0 +1,21 @@
+<app-carousel [sliders]="sliders" />
+<div class="container">
+   
+    <div class="s_space">
+        <h4 class="mb-4"> الهدايا الاقرب اليك</h4>
+        <app-product-list [products]="closeProducts()"></app-product-list>
+    </div>
+    <div class="s_space">
+        <h4 class="mb-4"> الهدايا الجديدة </h4>
+        <app-product-list [products]="newCopons()"></app-product-list>
+    </div>
+    <div class="s_space">
+        <h4 class="mb-4"> الهدايا الاعلي تقييما </h4>
+        <app-product-list [products]="highRateCopons()"></app-product-list>
+    </div>
+
+
+  
+
+    <install-app></install-app>
+</div>

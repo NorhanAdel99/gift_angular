@@ -1,0 +1,38 @@
+   .otp_input {
+       border-style: solid;
+       width: 50px;
+       height: 50px;
+       border-radius: 10px;
+       border: 1px solid #1e1e1e;
+       background-color: #1e1e1e !important;
+   }
+
+   .otp_input:focus {
+       border-color: #3b82f6 !important;
+       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+   }
+
+   .spin-animation {
+       display: inline-block;
+       animation: spin 1s linear infinite;
+   }
+
+   @keyframes spin {
+       0% {
+           transform: rotate(0deg);
+       }
+
+       100% {
+           transform: rotate(360deg);
+       }
+   }
+
+   .resendCodeBtn {
+       padding: 0.5rem 1rem;
+       border: none;
+       border-radius: 5px;
+   }
+
+   .purple_color {
+       background-color: purple;
+   }

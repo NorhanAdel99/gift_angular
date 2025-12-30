@@ -1,0 +1,98 @@
+<header>
+    <div class="upper_header">
+        <div class="container">
+            <div class=" py-2 gap-2 flex-wrap">
+                <div class="flex_end gap-3">
+                    @if(!isLoggedIn) {
+                    <a class="text-dark" routerLink="/auth/login">
+                        <span> تسجيل الدخول </span>
+                        <span>/</span>
+                        <span> تسجيل جديد</span>
+                    </a>
+                    }
+                    @else {
+                        <p>
+                            {{ profile()?.fullName }}
+                        </p>
+                    <a class="text-dark cursor-pointer" (click)="logout()">
+                        تسجيل خروج
+                    </a>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_content">
+        <div class="container">
+            <div class="flex_between py-3">
+                <div class="d-flex align-items-center gap-4">
+                    <a routerLink="/">
+                        <img src="assets/images/logo.svg" alt="logo" loading="lazy" class="logo" />
+                    </a>
+                    <ul class="header_nav ms-15">
+                        <li>
+                            <a routerLink="/" routerLinkActive="active">
+                                <img src="assets/images/menu/Home.png" alt="home_icon" class="img_icon" />
+                                الرئيسية
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="checkLogin('/gifts')" class="d-block">
+                                <img src="assets/images/menu/Notebook.png" alt="home_icon" class="img_icon" />
+                                الهدايا
+                            </a>
+                        </li>
+
+                        <li>
+                            <a (click)="checkLogin('/cart')">
+                                <div class="cart-wrapper position-relative">
+                                    <img src="assets/images/menu/Cart.png" alt="cart_icon" class="img_icon" />
+
+                                    <div class="cart-pulse-indicator"></div>
+
+                                </div>
+                                السلة
+                            </a>
+                        </li>
+                        <li>
+                            <a (click)="checkLogin('/favorites')">
+                                <img src="assets/images/menu/Heart.png" alt="home_icon" class="img_icon" />
+                                المفضلة
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="#">
+                                <img src="../../assets/images/Letter.png" alt="home_icon" class="img_icon" />
+                                اتصل بنا
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="position-relative flex_center z-10 search_input ms-15 cursor-pointer">
+                        <div class="">
+                            <img src="assets/images/Magnifer.svg" alt="search" class="img_icon m-0" />
+                        </div>
+                    </div>
+                    <a (click)="checkLogin('/notifications')" class="notification ms-15">
+                        <img src="assets/images/Bell.svg" loading="lazy" alt="notification" class="notification_icon" />
+                        <div class="notification_count">
+                            <span>0</span>
+                        </div>
+                    </a>
+
+
+                    <div class="main_menu burger-icon wh-color ms-15">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="nav-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

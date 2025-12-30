@@ -1,0 +1,92 @@
+$ltr: 'html[lang="en"]';
+$rtl: 'html[lang="ar"]';
+/*********************************************************
+  // global color variables
+**********************************************************/
+
+// colors
+$main: #e4a552;
+$sec: #FF66C4;
+$main-accent: #BEF1F4;
+$gray: #676767;
+
+$blue: #322682;
+$dark: #1F2427;
+$dark2: #D9D9D9;
+$dark3: #707070;
+$dark4: #8B8B8B;
+$white: #fff;
+
+$white2: #FFE5F5;
+
+$white4: #505050;
+
+$black: #272727;
+
+$black2: #383838;
+$black3: #101010;
+
+$light: #9b9b9b;
+$light2: #e4e4e4;
+$light3: #F7F7F7;
+
+$light4: #F3F3F3;
+$light5: #F0F0F4;
+$light6: #EEEEEE;
+
+$red: #F0516D;
+
+$red2: #AB4040;
+$red3: #FFDBE2;
+$red4: #ED1C24;
+$orange: #ffcb29;
+$yellow: #ffba35;
+$border-color: #e6e6e6;
+$placholder-color: #adabab;
+$icon-color: #b5b5b5;
+$side-color: #939393;
+$text-color: #9EA0A4;
+$border_color: #E4E4E4;
+$main-shadow: 0 0 5px 0 rgba($color: $black, $alpha: .1);
+$card-shadow: 0 1px 4px rgba($color: #6D6D6D, $alpha: .1);
+$sec-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+$side-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+$nav_shadow: 0 5px 7px 0 rgba($color: $black, $alpha: .05);
+$text-shadow: 0 2px 2px rgba($color: $dark, $alpha: .1);
+$img-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: 25%);
+$main-transition: all .3s ease;
+$sec-transition: all .8s cubic-bezier(0.68, -0.50, 0.265, 1.3);
+$sm-btn: 40px;
+$main-btn: 48px;
+$card-height: 400px;
+$border_width: 1px;
+$body_font_size: 15px;
+$start_size: 0;
+/*********************************************************
+  // Font variables
+**********************************************************/
+
+$font-normal: 'HSDream-Light', sans-serif, 'Font Awesome 5 Free';
+
+/*********************************************************
+  // spacing variables
+**********************************************************/
+// these variable/s is still not applied on all elements
+
+$space-between: 20px;
+$spacer: 10px;
+$half: 50%;
+$section_space: 50px;
+
+/*********************************************************
+  // screens
+**********************************************************/
+$screen-xxl: 1720px;
+$screen-xx: 1600px;
+$screen-xl: 1280px;
+$screen-lg2: 1200px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+$screen-xs: 425px;
+$screen-xxs: 375px;

@@ -1,0 +1,104 @@
+<footer>
+  <div class="container">
+    <div class="row align-items-start justify-content-between">
+      <!-- <p-skeleton class="mb-2" /> -->
+      <!-- اللوجو والوصف -->
+      <div class="col-lg-2 col-md-3 col-sm-6">
+        <img src="assets/images/logo.svg" alt="الشعار" class="footer_logo mb-4 d-block mx-auto" />
+
+        <p class="mb-4 footer_txt">
+          {{ contactData()?.footerDescription }}
+        </p>
+      </div>
+
+      <!-- روابط سريعة -->
+      <div class="col-lg-2 col-md-3 col-sm-6">
+        <ul>
+          <li>
+            <h6 class="font-bold main_color mb-4 footer_title">
+              روابط سريعة
+            </h6>
+          </li>
+
+          <li>
+            <a routerLink="/" class="footer_link d-block mb-4">
+              <img src="assets/images/menu/Home.png" class="img_icon" />
+              <span>الرئيسية</span>
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/" class="footer_link d-block mb-4 cursor-pointer">
+              <img src="assets/images/menu/Heart.png" class="img_icon" />
+              <span>المفضلة</span>
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/" class="footer_link d-block mb-4">
+              <img src="../../assets/images/menu/Letter.png" class="img_icon" />
+              <span>تواصل معنا</span>
+            </a>
+          </li>
+
+          <li>
+            <a routerLink="/" class="footer_link d-block mb-4">
+              <img src="assets/images/Notebook.svg" class="img_icon" />
+              <span>الشروط والأحكام</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- الأقسام -->
+      <div class="col-lg-2 col-md-3 col-sm-6">
+        <h6 class="font-bold main_color mb-4 footer_title">
+          الأقسام
+        </h6>
+
+        <ul class="contain_categories mb-4">
+          @for (item of categories(); track $index; let i = $index) {
+          <li class="footer_link d-block mb-4 cursor_pointer">
+            <a href="#" class="text-dark">
+              {{ item.name }}
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- معلومات التواصل -->
+      <div class="col-md-3 col-sm-6">
+        <ul>
+          <li>
+            <h6 class="font-bold main_color mb-4 footer_title">
+              معلومات التواصل
+            </h6>
+          </li>
+
+          <li>
+            <a class="footer_not_active d-block mb-4 text-dark" [href]="'tel:' + contactData()?.phoneNumber">
+              <img src="assets/images/call-calling.svg" class="img_icon" />
+              <span>{{ contactData()?.phoneNumber }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="footer_not_active d-block mb-4 text-dark" [href]="'mailto:' + contactData()?.email">
+              <img src="assets/images/message-text.svg" class="img_icon" />
+              <span>{{ contactData()?.email }} </span>
+            </a>
+          </li>
+
+          <li>
+            <div class="footer_not_active d-block mb-4">
+              <img src="assets/images/l.png" class="img_icon" />
+              <span>{{ contactData()?.address }} </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>

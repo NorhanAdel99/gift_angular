@@ -1,0 +1,550 @@
+* {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+@font-face {
+  font-family: fontKaff;
+  src: url("../fonts/alfont_com_29LT-Kaff-Light.ttf");
+
+
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: $main;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+  height: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $main;
+}
+
+.p-component {
+  font-family: fontKaff !important;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: fontKaff !important;
+  font-size: $body_font_size !important;
+  background-color: #fcfcfc;
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 12px !important;
+  }
+
+  #{$ltr} & {
+    direction: ltr;
+    text-align: left;
+  }
+
+  #{$rtl} & {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input {
+  #{$ltr} & {
+    direction: ltr;
+  }
+
+  #{$rtl} & {
+    direction: rtl;
+  }
+
+  &::placeholder {
+    color: $main;
+    font-size: 13px;
+    transition: $main-transition;
+  }
+
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+select {
+  appearance: none;
+  font-size: 13px;
+  color: $dark;
+}
+
+textarea {
+  resize: none !important;
+}
+
+i {
+  line-height: inherit !important;
+  font-size: 13px !important;
+}
+
+.pi-angle-double-left,
+.pi-angle-left,
+.fa-right-long,
+.fa-left-long {
+  #{$ltr} & {
+    transform: rotate(-180deg);
+  }
+}
+
+p {
+  color: $black;
+  margin-bottom: 0 !important;
+  // font-size: 1px;
+  line-height: 2;
+
+  @media screen and (max-width: $screen-sm) {
+    line-height: 1.8;
+  }
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+*::placeholder {
+  color: $placholder-color;
+  // font-weight: fontMed;
+  font-size: 13px;
+  // font-weight: 500;
+  transition: $main-transition;
+}
+
+form {
+  padding: 0;
+
+  #{$ltr} & {
+    text-align: left;
+  }
+
+  #{$rtl} & {
+    text-align: right;
+  }
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+
+  // &:hover {
+  //   color: $main;
+  // }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0 !important;
+}
+
+label,
+.dropdown-toggle,
+button,
+a,
+i {
+  cursor: pointer;
+}
+
+.owl-carousel {
+  touch-action: manipulation;
+}
+
+.p-skeleton {
+  opacity: 0.8;
+}
+
+ul {
+  padding: 0;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button:disabled {
+  // pointer-events: none;
+  cursor: not-allowed;
+}
+
+button,
+a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+select:focus,
+button:focus,
+input:focus {
+  outline: 0;
+}
+
+.radio-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  &.active {
+    background-color: $main;
+  }
+}
+
+.feedback {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+  font-size: 11px;
+  color: $red;
+  pointer-events: none;
+  visibility: hidden;
+  transition: 0.3s all ease;
+  opacity: 0;
+  white-space: nowrap;
+
+  span {
+    // background-color: #fff;
+    padding: 0 5px;
+    border-radius: 5px;
+  }
+
+  &.valid {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.service_feedback {
+    bottom: -100%;
+  }
+
+  &.type_feedback {
+    bottom: -100%;
+  }
+}
+
+// font size
+@for $i from 1 through 100 {
+  .font#{$i} {
+    font-size: $i + px !important;
+
+    @media screen and (max-width: 425px) {
+      font-size: ($i - 2) + px !important;
+    }
+  }
+}
+
+// height
+@for $i from 1 through 200 {
+  .height#{$i} {
+    height: $i + px !important;
+  }
+}
+
+// width
+@for $i from 1 through 200 {
+  .width#{$i} {
+    width: $i + px !important;
+  }
+}
+
+// z-index
+@for $i from 1 to 100 {
+  .z-index#{$i} {
+    z-index: #{$i} !important;
+  }
+}
+
+.txt-cut {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+}
+
+.overlay-loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #4a4a4a8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+
+  .spinner-border {
+    border-left-color: $main;
+    border-right-color: #fff;
+    border-top-color: $main;
+    border-bottom-color: #fff;
+  }
+
+  .spinner-border-sm {
+    --bs-spinner-width: 2rem;
+    --bs-spinner-height: 2rem;
+    --bs-spinner-border-width: 0.4em;
+  }
+}
+
+//  notification items
+
+@keyframes comeDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.notification_alert {
+  position: fixed;
+  top: 0;
+  z-index: 9999999999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .item_alert {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    gap: 10px;
+    animation: comeDown 0.5s ease;
+    transition: 0.3s all ease;
+    box-shadow: 0 0 5px #ddc;
+
+    .defualt-link {
+      color: unset;
+    }
+
+    &.fade_out_reverse {
+      animation: none;
+      transform: translateY(-150%);
+    }
+
+    .fa-bell {
+      width: 40px;
+      height: 40px;
+      background-color: $main;
+      text-align: center;
+      color: #fff;
+      line-height: 40px;
+      border-radius: 7px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .text-title {
+      width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .text_body {
+      width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: $main;
+      font-weight: 600;
+    }
+
+    // img {
+    //     border-radius: 50%;
+    //     background-color: #fff;
+    //     padding: 5px;
+    //     width: 30px;
+    //     height: 30px;
+    // }
+  }
+
+  // &.show{
+  //     opacity: 1;
+  //     transform: translateX(0);
+  // }
+}
+
+// =============== // $- 🐾  global_classes  🐾 -$ // ===============  //
+.main_color {
+  color: $main;
+}
+
+.gray {
+  color: $gray;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.flex_between {
+  @include between;
+}
+
+.flex_center {
+  @include center;
+}
+
+.flex_end {
+  @include end;
+}
+
+.flex_start {
+  @include start;
+}
+
+.breadcrumb {
+  background-color: unset;
+  padding: 0;
+}
+
+.p-component {
+  font-family: inherit;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  outline: unset;
+}
+
+.f-50 {
+  flex-basis: 50%;
+
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+  }
+}
+
+.s_space {
+  margin: $section_space 0;
+}
+
+.p-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.p-dropdown .p-inputtext,
+.p-multiselect .p-inputtext {
+  font-family: inherit;
+}
+.dropdown-menu {
+  font-size: $body_font_size;
+}
+.custom_bg_skelton {
+  background: #e5e7eb85 !important;
+}
+.p-dropdown {
+  box-shadow: unset !important;
+}
+.p-toast-message-content {
+  align-items: center;
+  svg {
+    margin-bottom: 5px;
+  }
+}
+.p-toast-message-text {
+  font-size: 13px;
+  margin-inline-start: 10px;
+}
+.breadcrumb {
+  margin-bottom: 0;
+}
+.m_end_5 {
+  margin-inline-end: 5px;
+}
+.f-15 {
+  font-size: 15px;
+}
+.f-18 {
+  font-size: 18px;
+}
+.font-bolder {
+  font-weight: bolder !important;
+}
+.font-bold {
+  font-weight: bold;
+}
+.text_underline {
+  text-decoration: underline !important;
+}
+.p-datepicker {
+  direction: ltr;
+}
+.p-rating .p-rating-item.p-rating-item-active .p-rating-icon ,  .p-rating:not(.p-disabled):not(.p-readonly) .p-rating-item:hover .p-rating-icon {
+  color: $main;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: $main;
+  background: #f9b03323 !important;
+}
+

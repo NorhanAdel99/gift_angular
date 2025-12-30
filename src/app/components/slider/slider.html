@@ -1,0 +1,15 @@
+<div class="slider">
+    <p-carousel [value]="sliders()" [numVisible]="1" [numScroll]="1" [circular]="false"
+        [responsiveOptions]="responsiveOptions" class="dir-slider" [showNavigators]="false"   [circular]="true"
+        [autoplayInterval]="3000">
+        <ng-template pTemplate="item" let-product>
+            <div class="mb-4">
+                <div class="relative mx-auto">
+                    <div class="slider-item">
+                        <img [src]="product.img" [alt]="product.name" class="slider-img" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
