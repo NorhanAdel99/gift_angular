@@ -1,0 +1,26 @@
+<div class="contain_tabs flex_center mb-4 gap-3">
+  <div [ngClass]="(type === '1' && coupons_type) || (status === '1' && coupons_status) ? 'tab active' : 'tab'">
+    @if(coupons_type) {
+    <span class="tab_content" (click)="setType('1')">
+      {{ 'TABS.ACTIVE' | translate }}
+    </span>
+    }
+    @else if(coupons_status) {
+    <span class="tab_content" (click)="setStatus('1')">
+      {{ 'TABS.DISCOUNT' | translate }}
+    </span>
+    }
+  </div>
+  <div [ngClass]="(type === '2' && coupons_type) || (status === '2' && coupons_status) ? 'tab active' : 'tab'">
+    @if(coupons_type) {
+    <span class="tab_content" (click)="setType('2')">
+      {{ 'TABS.EXPIRED' | translate }}
+    </span>
+    }
+    @else if(coupons_status) {
+    <span class="tab_content" (click)="setStatus('2')">
+      {{ 'TABS.SPECIFIED_VALUE' | translate }}
+    </span>
+    }
+  </div>
+</div>
